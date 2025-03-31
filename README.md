@@ -30,7 +30,13 @@ This chatbot is a lightweight web application that allows users to upload medica
 
 ---
 
-Make sure fastapi, uvicorn, python dotenv, pillow, and requests are included.
+### Used Libraries
+
+- fastapi
+- uvicorn
+- python dotenv
+- pillow
+- requests
 
 ### How Chat bot Works
 
