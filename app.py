@@ -36,7 +36,7 @@ async def upload_and_query(image: UploadFile = File(...), query: str = Form(...)
         image_content = await image.read()
         if not image_content:
             raise HTTPException(status_code=400, detail="Empty file")
-        
+
         encoded_image = base64.b64encode(image_content).decode("utf-8")
 
         try:
@@ -72,23 +72,18 @@ async def upload_and_query(image: UploadFile = File(...), query: str = Form(...)
             )
             return response
 
-        # Make requests to both models
-        llama_response = make_api_request("llama-3.2-11b-vision-preview")
-        llava_response = make_api_request("llama-3.2-90b-vision-preview")
+        # Use only one model (LLaMA-3.2-90B or as named in your system)
+        selected_model = "meta-llama/llama-4-scout-17b-16e-instruct"
+        response = make_api_request(selected_model)
 
-        # Process responses
-        responses = {}
-        for model, response in [("llama", llama_response), ("llava", llava_response)]:
-            if response.status_code == 200:
-                result = response.json()
-                answer = result["choices"][0]["message"]["content"]
-                logger.info(f"Processed response from {model} API: {answer[:100]}...")
-                responses[model] = answer
-            else:
-                logger.error(f"Error from {model} API: {response.status_code} - {response.text}")
-                responses[model] = f"Error from {model} API: {response.status_code}"
-
-        return JSONResponse(status_code=200, content=responses)
+        if response.status_code == 200:
+            result = response.json()
+            answer = result["choices"][0]["message"]["content"]
+            logger.info(f"Processed response: {answer[:100]}...")
+            return JSONResponse(status_code=200, content={"response": answer})
+        else:
+            logger.error(f"Error from API: {response.status_code} - {response.text}")
+            return JSONResponse(status_code=response.status_code, content={"error": response.text})
 
     except HTTPException as he:
         logger.error(f"HTTP Exception: {str(he)}")
@@ -100,5 +95,3 @@ async def upload_and_query(image: UploadFile = File(...), query: str = Form(...)
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, port=8000)
-    
-    
