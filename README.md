@@ -22,13 +22,9 @@ This medica chatbot is an AI powered web based medical chatbot that allows users
 ## 📸 Demo
 
 > Upload a fundus image and ask:  
-<<<<<<< Updated upstream
 > _"What eye disease does this image indicate?"_  
 >  
-=======
-> _"What eye disease does this image indicate?"_
->
->>>>>>> Stashed changes
+
 > Response (from LLaMA Vision):  
 > _"The image suggests signs of diabetic retinopathy with scattered hemorrhages..."_
 
@@ -36,7 +32,6 @@ This medica chatbot is an AI powered web based medical chatbot that allows users
 
 ## 🏗️ Project Structure
 
-<<<<<<< Updated upstream
 ├── main.py # FastAPI app (uses multiple models)                                          
 ├── app.py # Slimmed version (uses one model)                                            
 ├── templates/                                                                                                                                                                                                └── index.html # Frontend form  
@@ -54,7 +49,6 @@ This medica chatbot is an AI powered web based medical chatbot that allows users
 
 ## 🛠️ Technologies Used
 
-=======
 ├── main.py # FastAPI app (uses multiple models)  
 ├── app.py # Slimmed version (uses one model)  
 ├── templates/ └── index.html # Frontend form
@@ -72,7 +66,6 @@ This medica chatbot is an AI powered web based medical chatbot that allows users
 
 ## 🛠️ Technologies Used
 
->>>>>>> Stashed changes
 - FastAPI
 - Groq API
 - Pillow – for image validation
