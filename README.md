@@ -1,48 +1,65 @@
+# 🧠 AI-Powered Medical Chatbot with Image & Symptom Analysis
 
-# AI DOCTOR Medical Chatbot - Analyze Image with Vision Models
- 
-This Medical Chatbot is a web app that allows users to upload medical images and ask questions about them. Using GROQ's LLaMA 3.2 Vision Models, it provides intelligent image analysis and context based responses. Built with FastAPI and Tailwind CSS, it’s designed for educational and diagnostic support.
-This chatbot is a lightweight web application that allows users to upload medical-related images and ask questions about them. It uses GROQ's LLaMA 3.2 Vision Models to generate image based responses, making it helpful for educational or diagnostic support scenarios.
+![Python](https://img.shields.io/badge/Python-3.10-blue.svg)
+![FastAPI](https://img.shields.io/badge/FastAPI-🚀-green)
+![Groq](https://img.shields.io/badge/Groq-API-red)
 
----
-
-### Features
-
-- Upload an image and ask contextual questions
-- Runs queries through two powerful vision models:
-  - llama-3.2-11b-vision-preview
-  - llama-3.2-90b-vision-preview
-- Side-by-side responses for comparison
-- Clean, responsive UI built with Tailwind CSS
-- Error handling and image validation
-- FastAPI backend
+This medica chatbot is an AI powered web based medical chatbot that allows users to upload **medical images** and describe their symptoms. It then intelligently analyzes both inputs using Groq's Vision Language Models to provide **diagnoses, insights, and explanations**.
 
 ---
 
-### Technologies used
+## 🔍 Features
 
- Backend      - FastAPI, Python, GROQ API      
- Frontend     - HTML, Tailwind CSS, Vanilla JS 
- Image Proc.  - Pillow, base64, io             
- Templating   - Jinja2                         
- Logging      - Python logging module        
- Env Handling - python dotenv                
+- 🖼️ Upload retinal/OCT or other medical images
+- 🧾 Enter symptoms or ask questions
+- 🧠 Uses Groq’s large multimodal language models to generate answers
+- 🔐 Secure API key management via `.env`
+- 📦 Built with FastAPI and Jinja2 templates
+- ⚡ Clean, modular, and ready for deployment
 
 ---
 
-### Used Libraries
+## 📸 Demo
 
-- fastapi
-- uvicorn
-- python dotenv
-- pillow
-- requests
+> Upload a fundus image and ask:  
+> _"What eye disease does this image indicate?"_  
+>  
+> Response (from LLaMA Vision):  
+> _"The image suggests signs of diabetic retinopathy with scattered hemorrhages..."_
 
-### How Chat bot Works
+---
 
-1. Upload an image ( X-ray, chart...)
-2. Type a medical or visual question
-3. The app sends the image and question to both vision models via GROQ API
-4. Responses are displayed on screen in Markdown format
+## 🏗️ Project Structure
 
+├── main.py # FastAPI app (uses multiple models)                                          
+├── app.py # Slimmed version (uses one model)                                            
+├── templates/                                                                                                                                                                                                └── index.html # Frontend form  
+                                                     
+├── .env # API keys (not pushed to GitHub)                                           
+├── requirements.txt # Dependencies                                                        
+└── README.md # This file                                                                 
 
+## 📤 How It Works
+
+- Upload an image and type a query (symptoms or questions)
+- The image is verified, converted to base64, and sent along with the query to Groq’s API.
+- The selected vision language model (meta-llama/llama-4-scout-17b-16e-instruct) analyzes both inputs.
+- The response is displayed to the user.
+
+## 🛠️ Technologies Used
+
+- FastAPI
+- Groq API
+- Pillow – for image validation
+- Requests
+- dotenv
+
+## 🧪 To Run
+
+```
+python -m venv venv
+venv\Scripts\activate
+
+pip install -r requirements.txt
+python app.py
+```
