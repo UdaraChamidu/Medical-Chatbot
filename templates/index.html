@@ -7,41 +7,48 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
-  <body class="bg-gray-50 text-gray-800 font-sans">
-    <div class="max-w-4xl mx-auto px-6 py-12">
+  <body
+    class="min-h-screen flex items-center justify-center bg-gray-50 text-gray-800 font-sans text-[1.1rem]"
+    style="background-image: url('/static/images.webp'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;"
+  >
+    <div class="max-w-4xl w-full mx-6 py-12 bg-white bg-opacity-90 rounded-xl shadow-lg">
+      
       <!-- Header -->
       <header class="text-center mb-10">
-        <h1 class="text-4xl font-bold text-indigo-700 mb-2">AI Doctor Assistant</h1>
-        <p class="text-gray-600">Upload an image and ask a medical question</p>
+        <h1 class="text-5xl font-bold text-indigo-700 mb-2">AI Doctor Assistant</h1>
+        <p class="text-gray-600 text-lg">Upload an image and ask a medical question</p>
       </header>
 
       <!-- Form Section -->
-      <div class="bg-white p-6 rounded-xl shadow-md">
+      <div class="bg-white p-6 rounded-xl shadow-md text-[1.1rem]">
         <div class="mb-4">
-          <label class="block font-semibold text-sm mb-2">Upload Image</label>
-          <input type="file" id="image-upload" accept="image/*" class="block w-full text-sm text-gray-700" />
+          <label class="block font-semibold mb-2">Upload Image</label>
+          <input type="file" id="image-upload" accept="image/*" class="block w-full text-gray-700" />
           <div id="image-container" class="hidden mt-4">
             <img id="display-image" src="" alt="Uploaded Image" class="rounded-lg shadow border max-w-full" />
           </div>
         </div>
 
         <div class="mb-4">
-          <label class="block font-semibold text-sm mb-2">Describe Your Symptoms or Ask a Question</label>
-          <textarea id="query-input" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-400"></textarea>
+          <label class="block font-semibold mb-2">Describe Your Symptoms or Ask a Question</label>
+          <textarea id="query-input" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-400 text-[1.1rem]"></textarea>
         </div>
 
-        <button id="submit-query" class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg flex items-center justify-center gap-2">
+        <button
+          id="submit-query"
+          class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg flex items-center justify-center gap-2"
+        >
           <span>Submit</span>
           <div id="loading-spinner" class="hidden animate-spin rounded-full h-5 w-5 border-t-2 border-white"></div>
         </button>
 
         <!-- Error Display -->
         <div id="error-container" class="hidden mt-4 p-3 bg-red-100 text-red-800 border border-red-300 rounded">
-          <p id="error-text"></p>
+          <p id="error-text" class="text-[1.1rem]"></p>
         </div>
 
         <!-- Response Display -->
-        <div id="response-container" class="hidden mt-6 p-4 bg-gray-100 text-gray-800 rounded border border-gray-300 text-sm whitespace-pre-wrap"></div>
+        <div id="response-container" class="hidden mt-6 p-4 bg-gray-100 text-gray-800 rounded border border-gray-300 text-[1.1rem] whitespace-pre-wrap"></div>
       </div>
     </div>
 
@@ -93,9 +100,9 @@
 
             const result = await response.json();
 
-            if (!response.ok) throw new Error(result.detail || "Unknown server error.");
+            if (!response.ok) throw new Error(result.response || "Unknown server error.");
 
-            responseContainer.innerHTML = marked.parse(result.llama);
+            responseContainer.innerHTML = marked.parse(result.response);
             responseContainer.classList.remove("hidden");
             errorContainer.classList.add("hidden");
           } catch (error) {
@@ -116,3 +123,5 @@
     </script>
   </body>
 </html>
+
+
