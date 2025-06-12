@@ -49,23 +49,6 @@ This medica chatbot is an AI powered web based medical chatbot that allows users
 
 ## 🛠️ Technologies Used
 
-├── main.py # FastAPI app (uses multiple models)  
-├── app.py # Slimmed version (uses one model)  
-├── templates/ └── index.html # Frontend form
-
-├── .env # API keys (not pushed to GitHub)  
-├── requirements.txt # Dependencies  
-└── README.md # This file
-
-## 📤 How It Works
-
-- Upload an image and type a query (symptoms or questions)
-- The image is verified, converted to base64, and sent along with the query to Groq’s API.
-- The selected vision language model (meta-llama/llama-4-scout-17b-16e-instruct) analyzes both inputs.
-- The response is displayed to the user.
-
-## 🛠️ Technologies Used
-
 - FastAPI
 - Groq API
 - Pillow – for image validation
