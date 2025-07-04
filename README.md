@@ -8,7 +8,7 @@ This medica chatbot is an AI powered web based medical chatbot that allows users
 
 ---
 
-## 🔍 Features
+## 🔍 Features 
 
 - 🖼️ Upload retinal/OCT or other medical images
 - 🧾 Enter symptoms or ask questions
