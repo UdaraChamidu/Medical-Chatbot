@@ -53,7 +53,7 @@ This medica chatbot is an AI powered web based medical chatbot that allows users
 - Groq API
 - Pillow – for image validation
 - Requests
-- dotenv
+- dotenv - handle environment variables
 
 ## 🧪 To Run
 
