@@ -1,6 +1,6 @@
 # 🧠 AI-Powered Medical Chatbot with Image & Symptom Analysis
 
-![Python](https://img.shields.io/badge/Python-3.10-blue.svg)
+![Python](https://img.shields.io/badge/Python-3.11-blue.svg)
 ![FastAPI](https://img.shields.io/badge/FastAPI-🚀-green)
 ![Groq](https://img.shields.io/badge/Groq-API-red)
 
@@ -19,7 +19,13 @@ This medica chatbot is an AI powered web based medical chatbot that allows users
 
 ---
 
-## 📸 Demo
+## 📸 Screenshots 
+
+<p align="center"> <img width="800" alt="Medical Chatbot Screenshot" src="https://github.com/user-attachments/assets/ba5a7de7-f495-4e9d-965d-128f931dca59" /> </p>
+
+---
+
+## 📄 Demo
 
 > Upload a fundus image and ask:  
 > _"What eye disease does this image indicate?"_  
@@ -32,13 +38,16 @@ This medica chatbot is an AI powered web based medical chatbot that allows users
 
 ## 🏗️ Project Structure
 
-├── main.py # FastAPI app (uses multiple models)                                          
-├── app.py # Slimmed version (uses one model)                                            
-├── templates/                                                                                                                                                                                                └── index.html # Frontend form  
-                                                     
-├── .env # API keys (not pushed to GitHub)                                           
-├── requirements.txt # Dependencies                                                        
-└── README.md # This file                                                                 
+```
+├── main.py                 # FastAPI app (uses multiple models)                                          
+├── app.py                  # Slimmed version (uses one model)                                            
+├── templates/ index.html   # Frontend form                                              
+├── .env                    # API keys (not pushed to GitHub)                                           
+├── requirements.txt        # Dependencies                                                        
+└── README.md               # This file
+```
+
+---                                                         
 
 ## 📤 How It Works
 
@@ -47,6 +56,8 @@ This medica chatbot is an AI powered web based medical chatbot that allows users
 - The selected vision language model (meta-llama/llama-4-scout-17b-16e-instruct) analyzes both inputs.
 - The response is displayed to the user.
 
+---
+
 ## 🛠️ Technologies Used
 
 - FastAPI
@@ -54,6 +65,8 @@ This medica chatbot is an AI powered web based medical chatbot that allows users
 - Pillow – for image validation
 - Requests
 - dotenv - handle environment variables
+
+---
 
 ## 🧪 To Run
 
