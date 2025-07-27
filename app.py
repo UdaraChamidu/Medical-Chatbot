@@ -26,11 +26,9 @@ GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 if not GROQ_API_KEY:
     raise ValueError("GROQ_API_KEY is not set in the .env file")
 
-
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
-
 
 @app.post("/upload_and_query")
 async def upload_and_query(image: UploadFile = File(...), query: str = Form(...)):
@@ -103,7 +101,7 @@ async def upload_and_query(image: UploadFile = File(...), query: str = Form(...)
         logger.error(f"Unexpected error: {str(e)}")
         return JSONResponse(status_code=500, content={"response": f"Internal Server Error: {str(e)}"})
 
-
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=7860)
+
