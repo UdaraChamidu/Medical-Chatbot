@@ -16,11 +16,12 @@ This medica chatbot is an AI powered web based medical chatbot that allows users
 - 🔐 Secure API key management via `.env`
 - 📦 Built with FastAPI and Jinja2 templates
 - ⚡ Clean, modular, and ready for deployment
+- Deployed in huggingface.
 
 ---
 
 ## Try the Med Assistant
-[![Open App](https://img.shields.io/badge/Open%20PDFChatty%20App-Click%20Here-brightgreen?style=for-the-badge)](https://huggingface.co/spaces/UdaraChamidu/Medical-Chatbot)
+[![Open App](https://img.shields.io/badge/Open%20MedicalChatbot%20App-Click%20Here-brightgreen?style=for-the-badge)](https://huggingface.co/spaces/UdaraChamidu/Medical-Chatbot)
 
 
 ---
@@ -71,6 +72,8 @@ This medica chatbot is an AI powered web based medical chatbot that allows users
 - Pillow – for image validation
 - Requests
 - dotenv - handle environment variables
+- Docker
+- Huggingface
 
 ---
 
