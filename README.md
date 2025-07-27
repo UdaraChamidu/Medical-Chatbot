@@ -4,7 +4,7 @@
 ![FastAPI](https://img.shields.io/badge/FastAPI-🚀-green)
 ![Groq](https://img.shields.io/badge/Groq-API-red)
 
-This medica chatbot is an AI powered web based medical chatbot that allows users to upload **medical images** and describe their symptoms. It then intelligently analyzes both inputs using Groq's Vision Language Models to provide **diagnoses, insights, and explanations**.
+This medica chatbot is an AI powered web based medical chatbot that allows users to upload **medical images** and describe their symptoms. It then intelligently analyzes both inputs using Groq's Vision Language Models to provide **diagnoses, insights, and explanations**. This model is live @ huggingface.
 
 ---
 
@@ -16,6 +16,12 @@ This medica chatbot is an AI powered web based medical chatbot that allows users
 - 🔐 Secure API key management via `.env`
 - 📦 Built with FastAPI and Jinja2 templates
 - ⚡ Clean, modular, and ready for deployment
+
+---
+
+## Try the Med Assistant
+[![Open App](https://img.shields.io/badge/Open%20PDFChatty%20App-Click%20Here-brightgreen?style=for-the-badge)](https://huggingface.co/spaces/UdaraChamidu/Medical-Chatbot)
+
 
 ---
 
